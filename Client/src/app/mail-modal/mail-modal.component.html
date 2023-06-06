@@ -1,0 +1,21 @@
+<div *ngIf="service.visibility" class="wrapper">
+  <div class="container animate__animated animate__backInDown">
+    <div class="title SummerHearts">
+      Dein Alias
+    </div>
+    <div class="desc">
+      Ihr anonymer E-Mail Alias wurde erfolgreich erstellt. Alle eingehenden E-Mails an diese Adresse werden nun diskret an Ihre angegebene E-Mail-Adresse weitergeleitet. Sie können sich entspannen, denn der Absender wird niemals Ihre tatsächliche E-Mail-Adresse zu Gesicht bekommen.
+    </div>
+    <div class="alias-field">
+      <div class="alias">
+        {{ service.email }}
+      </div>
+      <div (click)="copyTextToClipboard(service.email)" class="copy">
+        <img src="assets/copy.svg">
+      </div>
+    </div>
+    <div (click)="service.visibility = false" class="dispose">
+      Fenster schließen
+    </div>
+  </div>
+</div>

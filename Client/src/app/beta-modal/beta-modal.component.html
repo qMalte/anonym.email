@@ -1,0 +1,20 @@
+<div *ngIf="service.visibility" class="wrapper">
+  <div class="container animate__animated animate__backInDown">
+    <div class="title-wrapper">
+      <div class="title-img">
+        <img src="assets/padlock.svg">
+      </div>
+      <div class="title SummerHearts">
+        Closed Beta
+      </div>
+    </div>
+    <div class="input block">
+      <div class="input-wrapper">
+        <input [(ngModel)]="betaCode" type="password" class="input-email" placeholder="Beta-Code">
+      </div>
+      <div (click)="check()" class="input-submit-wrapper">
+        <img src="assets/shuttle.svg">
+      </div>
+    </div>
+  </div>
+</div>

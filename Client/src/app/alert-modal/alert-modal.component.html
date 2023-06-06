@@ -1,0 +1,9 @@
+<div *ngIf="service.visibility" (click)="service.visibility = false" class="wrapper animate__animated animate__bounceIn">
+  <div class="alert-error">
+    <div class="alert-error-img">
+      <img src="assets/warning.svg">
+    </div>
+    <div class="alert-error-desc">
+      {{ service.message }}
+    </div>
+</div>

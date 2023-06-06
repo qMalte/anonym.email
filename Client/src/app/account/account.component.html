@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="title-wrapper">
+      <div class="title SummerHearts">
+        Account-Einstellungen
+      </div>
+      <div *ngIf="adminPermission && !adminView" (click)="adminView = !adminView" class="user-overview">
+        Benutzer Ansicht
+      </div>
+      <div *ngIf="adminPermission && adminView" (click)="adminView = !adminView" class="admin-overview">
+        Administrator Ansicht
+      </div>
+      <div class="user-wrapper">
+        <div class="user-name">
+          {{ user?.email }}
+        </div>
+        <div class="user-icon">
+          <img src="assets/profile-user.svg">
+        </div>
+        <div (click)="logout()" class="logout-icon">
+          <img src="assets/logout.svg">
+        </div>
+      </div>
+    </div>
+    <div class="aliases">
+      <div *ngFor="let alias of (adminView ? allAliases : ownAliases)" class="alias">
+        <div class="alias-mailbox">
+          <div class="alias-text">
+            {{ alias.mailbox }}<span>@anonym.email</span>
+          </div>
+          <div class="target" *ngIf="adminView">wird an <b>{{ alias.user.email }}</b> weitergeleitet.</div>
+        </div>
+        <div (click)="deleteAlias(alias)" class="alias-delete">
+          <div class="alias-delete-icon">
+            <img src="assets/bin.svg">
+          </div>
+          <div class="alias-delete-text">
+            Löschen
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

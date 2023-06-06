@@ -1,0 +1,7 @@
+node_modules/
+.env
+storage/keys
+storage/logs
+dist/storage/assets/*
+dist/storage/logs/*
+dist/storage/keys/*

@@ -1,0 +1,22 @@
+<div class="container">
+  <div routerLink="/account" class="my-account">
+    Meine Alias-Adressen
+  </div>
+  <div (click)="helpModal.visibility = true" class="help">
+    <img src="assets/question.svg">
+  </div>
+  <div class="title SummerHearts">
+    <span>anonym</span>.email
+  </div>
+  <div class="input">
+    <div class="input-wrapper">
+      <input [(ngModel)]="email" type="email" class="input-email" placeholder="Deine E-Mail Adresse">
+    </div>
+    <div (click)="submit()" class="input-submit-wrapper">
+      <img src="assets/shuttle.svg">
+    </div>
+  </div>
+  <div class="legal">
+    Durch die Eingabe deiner E-Mail-Adresse stimmst du den Nutzungsbedingungen und der Datenschutzerklärung von anonym.email zu. Wir legen höchsten Wert auf den Schutz deiner Daten und behandeln sie vertraulich. Deine Zustimmung ermöglicht es uns, dir den Service zur Anonymisierung deiner E-Mail-Adresse anzubieten und sicherzustellen, dass du die volle Kontrolle über deine Privatsphäre behältst. Lies bitte sorgfältig unsere Nutzungsbedingungen und Datenschutzerklärung, um alle Details zu erfahren
+  </div>
+</div>

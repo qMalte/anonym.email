@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="title">
+      Anmeldung benötigt
+    </div>
+    <div *ngIf="showSecurityCodeField" class="helpText">
+      Dir wurde ein Einmalpasswort per E-Mail zugesendet.
+    </div>
+    <div class="input block">
+      <div class="input-wrapper">
+        <input [(ngModel)]="email" type="email" class="input-email" placeholder="Deine E-Mail Adresse">
+      </div>
+    </div>
+    <div *ngIf="showPasswordField" class="input block">
+      <div class="input-wrapper">
+        <input [(ngModel)]="password" type="password" class="input-email" placeholder="Deine Passwort">
+      </div>
+    </div>
+    <div *ngIf="showSecurityCodeField" class="input block">
+      <div class="input-wrapper">
+        <input [(ngModel)]="securityCode" type="password" class="input-email" placeholder="Dein Einmalpasswort">
+      </div>
+    </div>
+    <div *ngIf="showSecurityCodeField" class="input block">
+      <div class="input-wrapper">
+        <input [(ngModel)]="pw1" type="password" class="input-email" placeholder="Neues Passwort">
+      </div>
+    </div>
+    <div *ngIf="showSecurityCodeField" class="input block">
+      <div class="input-wrapper">
+        <input [(ngModel)]="pw2" type="password" class="input-email" placeholder="Neues Passwort bestätigen">
+      </div>
+    </div>
+    <div class="btn-wrapper">
+      <button *ngIf="showPasswordField" (click)="login()" type="button">Anmelden</button>
+      <button *ngIf="!showPasswordField && !showSecurityCodeField" (click)="passwordButtonClick()" type="button">
+        Passwort eingeben
+      </button>
+      <button *ngIf="showSecurityCodeField" (click)="setPassword()" type="button">Passwort Bestätigen</button>
+      <button *ngIf="!showSecurityCodeField && !showPasswordField" (click)="securityCodeButtonClick()" type="button">
+        Neues Passwort anfordern
+      </button>
+      <button *ngIf="showSecurityCodeField || showPasswordField" (click)="cancelButtonClick()" type="button" class="abort">
+        Abbrechen
+      </button>
+    </div>
+  </div>
+</div>

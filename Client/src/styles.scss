@@ -1,0 +1,133 @@
+// Fonts
+@import "https://fonts.werkhausen.org/Roboto/style.css";
+@import "https://fonts.werkhausen.org/SummerHearts/style.css";
+
+@import 'animate.css';
+
+* {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: WHITE;
+  overflow: hidden;
+  overflow: hidden;
+}
+
+html, body {
+  background: #0f141e;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.SummerHearts {
+  font-family: 'Summer Hearts';
+  font-weight: normal;
+  font-style: normal;
+}
+
+.input {
+  display: flex;
+  height: auto;
+  width: 25%;
+  @media only screen and (max-width: 700px) {
+    width: 90%;
+  }
+  gap: 1rem;
+  &.block {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.input-wrapper {
+  height: auto;
+}
+
+.input-email {
+  transition: 0.4s;
+  height: auto;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #333;
+  outline: none;
+  border: 2.5px solid transparent;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #CCC;
+  caret-color: #888;
+
+  &::placeholder {
+    color: #888;
+  }
+
+  &:hover {
+    border-color: #555;
+  }
+
+  &:focus {
+    border-color: #00c2ff;
+  }
+}
+
+.input-submit-wrapper {
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  width: auto;
+  background: #fff;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+
+  &:hover {
+    border-radius: 1rem;
+  }
+}
+
+.input-submit-wrapper > img {
+  width: 32px;
+  height: auto;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+button {
+  transition: 0.4s;
+  padding: 1rem;
+  background: #222;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:focus {
+    border-color: #00c2ff;
+  }
+
+  &:hover {
+    border-color: #00c2ff;
+  }
+
+  &.abort {
+    background: #da182f;
+
+    &:focus {
+      border-color: #fff;
+    }
+
+    &:hover {
+      border-color: #fff;
+    }
+  }
+}
+
+.helpText {
+  background: #4db4f6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}

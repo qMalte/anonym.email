@@ -1,0 +1,191 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  @media only screen and (max-width: 700px) {
+    padding: 1rem;
+  }
+}
+
+.container {
+  background: #002935;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  @media only screen and (max-width: 700px) {
+    width: 99%;
+  }
+  height: auto;
+  padding: 2rem;
+  @media only screen and (max-width: 700px) {
+    padding: 0.5rem;
+  }
+  border-radius: 0.5rem;
+  gap: 1.5rem;
+}
+
+.title-wrapper {
+  display: flex;
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  font-weight: bold;
+  font-size: 3rem;
+  @media only screen and (max-width: 700px) {
+    font-size: 2rem;
+  }
+  color: #00c2ff;
+  width: auto;
+}
+
+.admin-overview {
+  transition: 0.4s;
+  background: #da182f;
+  border-radius: 0.5rem;
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  &:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
+}
+
+.user-overview {
+  transition: 0.4s;
+  background: #008acc;
+  border-radius: 0.5rem;
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  &:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
+}
+
+.user-wrapper {
+  display: flex;
+  align-items: center;
+  width: auto;
+  gap: 1rem;
+}
+
+.user-name {
+  height: auto;
+  width: auto;
+  text-align: right;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.user-icon {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
+}
+
+.user-icon > img {
+  height: 45px;
+  width: auto;
+}
+
+.logout-icon {
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
+  &:hover {
+    cursor: pointer;
+    scale: 0.8;
+  }
+}
+
+.logout-icon > img {
+  height: 45px;
+  width: auto;
+}
+
+.aliases {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow-y: auto;
+}
+
+.alias {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #008acc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.alias-mailbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.alias-text {
+  width: auto;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.target {
+  width: auto;
+  font-weight: normal;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.alias-mailbox > span {
+  font-weight: 300;
+}
+
+.alias-delete {
+  transition: 0.4s;
+  background: #002935;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: auto;
+  padding: 0.5rem;
+  &:hover {
+    cursor: pointer;
+    background: #0073ab;
+  }
+}
+
+.alias-delete-icon {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
+}
+
+.alias-delete-icon > img {
+  width: 20px;
+  height: auto;
+}
+
+.alias-delete-text {
+  height: auto;
+  width: auto;
+  font-size: 0.8rem;
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
+}

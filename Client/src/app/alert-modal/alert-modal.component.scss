@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  justify-content: flex-start;
+  top: 0;
+  padding: 2rem;
+  height: auto;
+}
+
+.alert-error {
+  height: auto;
+  width: 40%;
+  @media only screen and (max-width: 700px) {
+    width: 98%;
+  }
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #da182f;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.alert-error-img {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
+}
+
+.alert-error-img > img {
+  height: 32px;
+  width: auto;
+}
+
+.alert-error-desc {
+  height: auto;
+}

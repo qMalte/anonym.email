@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+}
+
+.title {
+  height: auto;
+  font-size: 4rem;
+  color: #00c2ff;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.description {
+  height: auto;
+  text-align: justify;
+  line-height: 2rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 400;
+  overflow-y: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  @media only screen and (max-width: 700px) {
+    width: 98%;
+  }
+  height: auto;
+  background: #0f141e;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+br {
+  height: auto;
+  content: "";
+  margin: 4em;
+  display: block;
+  font-size: 24%;
+}
