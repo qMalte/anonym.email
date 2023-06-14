@@ -28,6 +28,8 @@ export class MailService {
 
         const templateFile = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
 
+        console.log(templateFile);
+
         let i = 1;
         this.params.forEach((param: string) => {
             templateFile.replace(`{param${i}}`, param);

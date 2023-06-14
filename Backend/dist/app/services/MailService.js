@@ -39,6 +39,7 @@ class MailService {
     send() {
         return __awaiter(this, void 0, void 0, function* () {
             const templateFile = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
+            console.log(templateFile);
             let i = 1;
             this.params.forEach((param) => {
                 templateFile.replace(`{param${i}}`, param);
