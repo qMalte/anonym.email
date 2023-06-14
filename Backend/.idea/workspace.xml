@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c97da2d-a801-4d7d-a743-813d701b5869" name="Changes" comment="" />
+    <list default="true" id="8c6687aa-7f2c-4d03-9bcd-d0775d12ed3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/storage/mails/password-reset-confirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/mails/password-reset-confirmation.mjml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/mails/password-reset-req.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/mails/password-reset-req.mjml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Anonym.email-BE.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/AuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/AuthService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/MailService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/MailService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/app/error-modal/error-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/app/error-modal/error-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/environments/environment.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,10 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2QfE4illGLiGJaSlePGBHtNdky1" />
+  <component name="ProjectId" id="2QqQ0c2kW2Plot80XTM4LSBm4Q5" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -27,41 +39,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/malte/Entwicklung/Anonym.email/Anonym.email-BE/app/middlewares&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/malte/Entwicklung/Anonym.email/Anonym.email-BE/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/malte/Entwicklung/Anonym.email/Backend/storage/mails",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/malte/Entwicklung/Anonym.email/Backend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/middlewares" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/services/IPQualityScore" />
-      <recent name="$PROJECT_DIR$/app/services/Mailcow" />
+      <recent name="$PROJECT_DIR$/storage/mails" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7c97da2d-a801-4d7d-a743-813d701b5869" name="Changes" comment="" />
-      <created>1685736046159</created>
+      <changelist id="8c6687aa-7f2c-4d03-9bcd-d0775d12ed3f" name="Changes" comment="" />
+      <created>1686078410152</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1685736046159</updated>
-      <workItem from="1685736047321" duration="21728000" />
-      <workItem from="1686065606874" duration="3403000" />
+      <updated>1686078410152</updated>
+      <workItem from="1686078412452" duration="24000" />
+      <workItem from="1686734268140" duration="633000" />
+      <workItem from="1686757961600" duration="3013000" />
     </task>
     <servers />
   </component>

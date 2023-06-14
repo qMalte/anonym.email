@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import fs from "fs";
 
 require("dotenv").config();
 
@@ -16,17 +17,45 @@ export class MailService {
         }
     });
 
-    constructor(public target: string, public subject: string, public message: string) {
+    constructor(public target: string, public subject: string,
+                public message: string = null, public html: Template = null,
+                public params: string[] = [],) {
         //
     }
 
     async send(): Promise<boolean> {
-        const message = {
-            from: `${this.fromName} <${this.fromAddress}>`,
-            to: this.target,
-            subject: this.subject,
-            text: this.message
-        };
+        let message: any = null;
+
+        if (this.message != null) {
+            message = {
+                from: `${this.fromName} <${this.fromAddress}>`,
+                to: this.target,
+                subject: this.subject,
+                text: this.message
+            };
+        }
+
+        if (this.html != null) {
+
+            const templateFile =fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`).toString();
+
+            let i = 0;
+            this.params.forEach((param: string) => {
+                templateFile.replace(`{param${i}}`, param);
+                i++;
+            });
+
+            message = {
+                from: `${this.fromName} <${this.fromAddress}>`,
+                to: this.target,
+                subject: this.subject,
+                html: templateFile
+            };
+        }
+
+        if (message == null) {
+            return false;
+        }
 
         try {
             await this.transport.sendMail(message);
@@ -35,4 +64,9 @@ export class MailService {
             return false;
         }
     }
+}
+
+export enum Template {
+    PASSWORD_RESET_REQ = 'password-reset-req.mjml',
+    PASSWORD_RESET_SUCCESS = 'password-reset-confirmation.mjml',
 }

@@ -6,7 +6,7 @@ import {DateHelper} from "../../helpers/DateHelper";
 import {AppDataSource} from "../../database/DatabaseProvider";
 import {PasswordResetLink} from "../models/PasswordResetLink";
 import {NumericHelper} from "../../helpers/NumericHelper";
-import {MailService} from "./MailService";
+import {MailService, Template} from "./MailService";
 import {FailedLogin} from "../models/FailedLogin";
 import {BlacklistedIP} from "../models/BlacklistedIP";
 import {MoreThan} from "typeorm";
@@ -108,7 +108,8 @@ Solltest du das zurücksetzen deines Passwortes nicht beantragt haben, ignoriere
 \n
 Dein Sicherheitscode: ${link.code}`;
 
-        const mail = new MailService(user.email, 'Zurücksetzung des Passworts', message);
+        const mail = new MailService(user.email, 'Zurücksetzung des Passworts', null,
+                Template.PASSWORD_RESET_REQ, [link.code.toString()]);
 
         return await mail.send();
 
@@ -153,7 +154,8 @@ mit dieser E-Mail bestätigen wir die Änderung deines Passworts!\n
 Solltest du keine Änderung deines Passwortes durchgeführt haben, kontaktiere uns schnellstmöglich!\n
 Wir werden dann eine umgehende Sperrung deines Account einleiten.`;
 
-        const mail = new MailService(user.email, 'Passwort Änderung', message);
+        const mail = new MailService(user.email, 'Passwort Änderung', null,
+            Template.PASSWORD_RESET_SUCCESS);
 
         return await mail.send();
 
