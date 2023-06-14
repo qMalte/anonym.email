@@ -108,7 +108,7 @@ Solltest du das zurücksetzen deines Passwortes nicht beantragt haben, ignoriere
 \n
 Dein Sicherheitscode: ${link.code}`;
 
-        const mail = new MailService(user.email, 'Zurücksetzung des Passworts', null,
+        const mail = new MailService(user.email, 'Zurücksetzung des Passworts', message,
                 Template.PASSWORD_RESET_REQ, [link.code.toString()]);
 
         return await mail.send();
@@ -154,7 +154,7 @@ mit dieser E-Mail bestätigen wir die Änderung deines Passworts!\n
 Solltest du keine Änderung deines Passwortes durchgeführt haben, kontaktiere uns schnellstmöglich!\n
 Wir werden dann eine umgehende Sperrung deines Account einleiten.`;
 
-        const mail = new MailService(user.email, 'Passwort Änderung', null,
+        const mail = new MailService(user.email, 'Passwort Änderung', message,
             Template.PASSWORD_RESET_SUCCESS);
 
         return await mail.send();

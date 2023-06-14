@@ -18,7 +18,7 @@ const fs_1 = __importDefault(require("fs"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 class MailService {
-    constructor(target, subject, message = null, html = null, params = []) {
+    constructor(target, subject, message, html, params = []) {
         this.target = target;
         this.subject = subject;
         this.message = message;
@@ -38,29 +38,19 @@ class MailService {
     }
     send() {
         return __awaiter(this, void 0, void 0, function* () {
-            let message = null;
-            if (this.message != null) {
-                message = {
-                    from: `${this.fromName} <${this.fromAddress}>`,
-                    to: this.target,
-                    subject: this.subject,
-                    text: this.message
-                };
-            }
-            if (this.html != null) {
-                const templateFile = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
-                let i = 1;
-                this.params.forEach((param) => {
-                    templateFile.replace(`{param${i}}`, param);
-                    i++;
-                });
-                message = {
-                    from: `${this.fromName} <${this.fromAddress}>`,
-                    to: this.target,
-                    subject: this.subject,
-                    html: templateFile
-                };
-            }
+            const templateFile = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
+            let i = 1;
+            this.params.forEach((param) => {
+                templateFile.replace(`{param${i}}`, param);
+                i++;
+            });
+            const message = {
+                from: `${this.fromName} <${this.fromAddress}>`,
+                to: this.target,
+                subject: this.subject,
+                text: this.message,
+                html: templateFile
+            };
             if (message == null) {
                 return false;
             }

@@ -19,40 +19,28 @@ export class MailService {
     });
 
     constructor(public target: string, public subject: string,
-                public message: string = null, public html: Template = null,
-                public params: string[] = [],) {
+                public message: string, public html: Template,
+                public params: string[] = []) {
         //
     }
 
     async send(): Promise<boolean> {
-        let message: any = null;
 
-        if (this.message != null) {
-            message = {
-                from: `${this.fromName} <${this.fromAddress}>`,
-                to: this.target,
-                subject: this.subject,
-                text: this.message
-            };
-        }
+        const templateFile = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
 
-        if (this.html != null) {
+        let i = 1;
+        this.params.forEach((param: string) => {
+            templateFile.replace(`{param${i}}`, param);
+            i++;
+        });
 
-            const templateFile = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
-
-            let i = 1;
-            this.params.forEach((param: string) => {
-                templateFile.replace(`{param${i}}`, param);
-                i++;
-            });
-
-            message = {
-                from: `${this.fromName} <${this.fromAddress}>`,
-                to: this.target,
-                subject: this.subject,
-                html: templateFile
-            };
-        }
+        const message = {
+            from: `${this.fromName} <${this.fromAddress}>`,
+            to: this.target,
+            subject: this.subject,
+            text: this.message,
+            html: templateFile
+        };
 
         if (message == null) {
             return false;

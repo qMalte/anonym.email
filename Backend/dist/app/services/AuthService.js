@@ -107,7 +107,7 @@ mit dieser E-Mail senden wir dir deinen Sicherheitscode zu, mit welchem du dein 
 Solltest du das zurücksetzen deines Passwortes nicht beantragt haben, ignoriere bitte diese Nachricht!\n
 \n
 Dein Sicherheitscode: ${link.code}`;
-            const mail = new MailService_1.MailService(user.email, 'Zurücksetzung des Passworts', null, MailService_1.Template.PASSWORD_RESET_REQ, [link.code.toString()]);
+            const mail = new MailService_1.MailService(user.email, 'Zurücksetzung des Passworts', message, MailService_1.Template.PASSWORD_RESET_REQ, [link.code.toString()]);
             return yield mail.send();
         });
     }
@@ -141,7 +141,7 @@ Dein Sicherheitscode: ${link.code}`;
 mit dieser E-Mail bestätigen wir die Änderung deines Passworts!\n
 Solltest du keine Änderung deines Passwortes durchgeführt haben, kontaktiere uns schnellstmöglich!\n
 Wir werden dann eine umgehende Sperrung deines Account einleiten.`;
-            const mail = new MailService_1.MailService(user.email, 'Passwort Änderung', null, MailService_1.Template.PASSWORD_RESET_SUCCESS);
+            const mail = new MailService_1.MailService(user.email, 'Passwort Änderung', message, MailService_1.Template.PASSWORD_RESET_SUCCESS);
             return yield mail.send();
         });
     }
