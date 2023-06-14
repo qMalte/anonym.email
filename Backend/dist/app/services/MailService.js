@@ -48,7 +48,7 @@ class MailService {
             }
             if (this.html != null) {
                 const templateFile = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`).toString();
-                let i = 0;
+                let i = 1;
                 this.params.forEach((param) => {
                     templateFile.replace(`{param${i}}`, param);
                     i++;
