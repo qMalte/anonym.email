@@ -10,6 +10,8 @@ import {MailcowService} from "../services/Mailcow/MailcowService";
 import {UserService} from "../services/UserService";
 import {AuthenticationResources} from "../../resources/AuthenticationResources";
 import * as process from "process";
+import {MailService, Template} from "../services/MailService";
+import normalizeEmail = validator.normalizeEmail;
 
 export class MailAliasController {
 
@@ -95,6 +97,12 @@ export class MailAliasController {
             } else {
                 return res.status(500).send(SystemResources.ServerError);
             }
+
+            const mail = new MailService(user.email,
+                'Dein Alias wurde erstellt.',
+                Template.ALIAS_CREATED,
+                [mailAlias.mailbox + '@anonym.email']);
+            await mail.send();
 
             return res.status(200).send(mailAlias);
 

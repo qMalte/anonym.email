@@ -47,6 +47,7 @@ const MailcowService_1 = require("../services/Mailcow/MailcowService");
 const UserService_1 = require("../services/UserService");
 const AuthenticationResources_1 = require("../../resources/AuthenticationResources");
 const process = __importStar(require("process"));
+const MailService_1 = require("../services/MailService");
 class MailAliasController {
     GetAliases(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -126,6 +127,8 @@ class MailAliasController {
                 else {
                     return res.status(500).send(SystemResources_1.SystemResources.ServerError);
                 }
+                const mail = new MailService_1.MailService(user.email, 'Dein Alias wurde erstellt.', MailService_1.Template.ALIAS_CREATED, [mailAlias.mailbox + '@anonym.email']);
+                yield mail.send();
                 return res.status(200).send(mailAlias);
             }
             catch (e) {

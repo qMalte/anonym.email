@@ -67,5 +67,6 @@ var Template;
 (function (Template) {
     Template["PASSWORD_RESET_REQ"] = "password-reset-req";
     Template["PASSWORD_RESET_SUCCESS"] = "password-reset-confirmation";
+    Template["ALIAS_CREATED"] = "alias-created";
 })(Template = exports.Template || (exports.Template = {}));
 //# sourceMappingURL=MailService.js.map

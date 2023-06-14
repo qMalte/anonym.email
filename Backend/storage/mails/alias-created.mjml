@@ -1,0 +1,63 @@
+<mjml>
+    <mj-head>
+        <mj-font name="Summer Hearts"
+                 href="https://fonts.werkhausen.org/SummerHearts/style.css" />
+        <mj-font name="Calibri"
+                 href="https://fonts.werkhausen.org/Calibri/style.css" />
+    </mj-head>
+    <mj-body background-color="#1B2131">
+        <mj-section>
+            <mj-column>
+
+                <mj-text font-size="3rem" align="center" color="#fff" font-family="Summer Hearts">
+                    anonym.email
+                </mj-text>
+
+                <mj-divider border-color="#fff"></mj-divider>
+
+                <mj-text font-size="1.5rem" color="#fff" font-weight="bold" font-family="Calibri"
+                    align="left">
+                    Dein Alias wurde erstellt!
+                </mj-text>
+
+                <mj-text font-size="1rem" color="#fff" font-weight="400" font-family="Calibri"
+                         align="left" line-height="1.6rem">
+                    Guten Tag,<br>
+                    vielen Dank das du unseren Service benutzt hast.<br>
+                    Dein Alias wurde erstellt und ist ab sofort aktiv.<br>
+                    Du kannst dich jederzeit auf unserer Webseite anmelden und deine Alias Adresse verwalten.<br>
+                </mj-text>
+
+                <mj-text font-size="1.25rem" color="#fff" font-weight="bold" font-family="Calibri"
+                         align="center" line-height="1.6rem" padding-top="2rem">
+                    Dein Alias:
+                </mj-text>
+
+                <mj-text padding-top="0" padding-bottom="2rem" font-size="1.5rem" color="#fff"
+                         font-weight="bolder" font-family="Calibri"
+                         align="center" line-height="3rem" letter-spacing="0.1rem">
+                    {param1}
+                </mj-text>
+
+                <mj-text font-size="1rem" color="#ddd" font-family="Calibri" align="justify"
+                            line-height="1.75rem" padding-bottom="2rem">
+                    Du erhälst diese E-Mail, zur Information das dein Alias erstellt wurde.
+                </mj-text>
+
+                <mj-text font-size="0.75rem" color="#aaa" font-family="Calibri" align="justify"
+                         line-height="1.rem">
+                    Diese E-Mail und alle Anhänge sind vertraulich und ausschließlich für den beabsichtigten Empfänger bestimmt. Sollten Sie nicht der beabsichtigte Empfänger sein, informieren Sie bitte umgehend den Absender und löschen Sie die E-Mail und alle Kopien davon von Ihrem System. Jegliche unbefugte Verbreitung, Vervielfältigung oder Weitergabe dieser E-Mail ist strengstens untersagt.
+                    <br>
+                    Bitte beachten Sie, dass diese E-Mail automatisch generiert wurde und daher möglicherweise Informationen enthält, die nicht manuell überprüft wurden. Die automatische Generierung dieser E-Mail dient ausschließlich zur Effizienzsteigerung und stellt keine Gewähr für die Richtigkeit oder Vollständigkeit der enthaltenen Informationen dar.
+                    <br>
+                    Der Absender übernimmt keine Haftung für Schäden, die durch den Inhalt oder den Empfang dieser E-Mail entstehen. Obwohl angemessene Vorkehrungen getroffen wurden, um sicherzustellen, dass diese E-Mail und etwaige Anhänge virenfrei sind, liegt es in der Verantwortung des Empfängers, alle erhaltenen Dateien auf Viren oder andere schädliche Elemente zu überprüfen.
+                    <br>
+                    Bitte beachten Sie, dass die Kommunikation per E-Mail unsicher sein kann. Daher kann der Absender nicht garantieren, dass diese E-Mail oder etwaige Anhänge während der Übertragung nicht abgefangen, verändert oder beschädigt werden. Der Absender lehnt jegliche Haftung für Verluste oder Schäden ab, die aus solchen Vorkommnissen resultieren.
+                    <br>
+                    Bitte haben Sie Verständnis dafür, dass der Inhalt dieser E-Mail keine rechtsverbindliche Stellungnahme, Beratung oder Genehmigung darstellt, es sei denn, dies ist ausdrücklich angegeben.
+                </mj-text>
+
+            </mj-column>
+        </mj-section>
+    </mj-body>
+</mjml>

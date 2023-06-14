@@ -55,4 +55,5 @@ export class MailService {
 export enum Template {
     PASSWORD_RESET_REQ = 'password-reset-req',
     PASSWORD_RESET_SUCCESS = 'password-reset-confirmation',
+    ALIAS_CREATED = 'alias-created'
 }
