@@ -26,13 +26,11 @@ export class MailService {
 
     async send(): Promise<boolean> {
 
-        const templateFile = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
+        let templateFile = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
 
         let i = 1;
         this.params.forEach((param: string) => {
-            console.log(`{param${i}}`);
-            console.log(param);
-            templateFile.replace(`{param${i}}`, param);
+            templateFile = templateFile.replace(`{param${i}}`, param);
             i++;
         });
 
