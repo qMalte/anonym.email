@@ -15,7 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Template = exports.MailService = void 0;
 const nodemailer_1 = __importDefault(require("nodemailer"));
 const fs_1 = __importDefault(require("fs"));
-require("dotenv").config();
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 class MailService {
     constructor(target, subject, message = null, html = null, params = []) {
         this.target = target;
@@ -47,7 +48,7 @@ class MailService {
                 };
             }
             if (this.html != null) {
-                const templateFile = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`).toString();
+                const templateFile = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
                 let i = 1;
                 this.params.forEach((param) => {
                     templateFile.replace(`{param${i}}`, param);

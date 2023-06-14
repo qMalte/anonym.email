@@ -1,7 +1,8 @@
 import nodemailer from 'nodemailer';
 import fs from "fs";
 
-require("dotenv").config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 export class MailService {
 
@@ -37,7 +38,7 @@ export class MailService {
 
         if (this.html != null) {
 
-            const templateFile =fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`).toString();
+            const templateFile = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
 
             let i = 1;
             this.params.forEach((param: string) => {
