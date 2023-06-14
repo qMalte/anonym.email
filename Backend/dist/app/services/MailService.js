@@ -39,9 +39,9 @@ class MailService {
     send() {
         return __awaiter(this, void 0, void 0, function* () {
             const templateFile = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
-            console.log(templateFile);
             let i = 1;
             this.params.forEach((param) => {
+                console.log(param);
                 templateFile.replace(`{param${i}}`, param);
                 i++;
             });
@@ -68,7 +68,7 @@ class MailService {
 exports.MailService = MailService;
 var Template;
 (function (Template) {
-    Template["PASSWORD_RESET_REQ"] = "password-reset-req.mjml";
-    Template["PASSWORD_RESET_SUCCESS"] = "password-reset-confirmation.mjml";
+    Template["PASSWORD_RESET_REQ"] = "password-reset-req.html";
+    Template["PASSWORD_RESET_SUCCESS"] = "password-reset-confirmation.html";
 })(Template = exports.Template || (exports.Template = {}));
 //# sourceMappingURL=MailService.js.map

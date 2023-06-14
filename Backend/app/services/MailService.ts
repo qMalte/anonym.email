@@ -28,10 +28,9 @@ export class MailService {
 
         const templateFile = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
 
-        console.log(templateFile);
-
         let i = 1;
         this.params.forEach((param: string) => {
+            console.log(param);
             templateFile.replace(`{param${i}}`, param);
             i++;
         });
@@ -58,6 +57,6 @@ export class MailService {
 }
 
 export enum Template {
-    PASSWORD_RESET_REQ = 'password-reset-req.mjml',
-    PASSWORD_RESET_SUCCESS = 'password-reset-confirmation.mjml',
+    PASSWORD_RESET_REQ = 'password-reset-req.html',
+    PASSWORD_RESET_SUCCESS = 'password-reset-confirmation.html',
 }
