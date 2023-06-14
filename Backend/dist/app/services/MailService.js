@@ -18,11 +18,10 @@ const fs_1 = __importDefault(require("fs"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 class MailService {
-    constructor(target, subject, message, html, params = []) {
+    constructor(target, subject, template, params = []) {
         this.target = target;
         this.subject = subject;
-        this.message = message;
-        this.html = html;
+        this.template = template;
         this.params = params;
         this.fromAddress = process.env.SMTP_FROM_ADDRESS;
         this.fromName = process.env.SMTP_FROM_NAME;
@@ -38,22 +37,21 @@ class MailService {
     }
     send() {
         return __awaiter(this, void 0, void 0, function* () {
-            let templateFile = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
+            let templateFileHtml = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.template}.html`, 'utf8');
+            let templateFileRaw = fs_1.default.readFileSync(`${__dirname}/../../../storage/mails/${this.template}.raw`, 'utf8');
             let i = 1;
             this.params.forEach((param) => {
-                templateFile = templateFile.replace(`{param${i}}`, param);
+                templateFileHtml = templateFileHtml.replace(`{param${i}}`, param);
+                templateFileRaw = templateFileRaw.replace(`{param${i}}`, param);
                 i++;
             });
             const message = {
                 from: `${this.fromName} <${this.fromAddress}>`,
                 to: this.target,
                 subject: this.subject,
-                text: this.message,
-                html: templateFile
+                text: templateFileRaw,
+                html: templateFileHtml
             };
-            if (message == null) {
-                return false;
-            }
             try {
                 yield this.transport.sendMail(message);
                 return true;
@@ -67,7 +65,7 @@ class MailService {
 exports.MailService = MailService;
 var Template;
 (function (Template) {
-    Template["PASSWORD_RESET_REQ"] = "password-reset-req.html";
-    Template["PASSWORD_RESET_SUCCESS"] = "password-reset-confirmation.html";
+    Template["PASSWORD_RESET_REQ"] = "password-reset-req";
+    Template["PASSWORD_RESET_SUCCESS"] = "password-reset-confirmation";
 })(Template = exports.Template || (exports.Template = {}));
 //# sourceMappingURL=MailService.js.map

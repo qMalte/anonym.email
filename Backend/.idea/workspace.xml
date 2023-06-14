@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c6687aa-7f2c-4d03-9bcd-d0775d12ed3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/storage/mails/password-reset-confirmation.raw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/mails/password-reset-req.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/AuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/AuthService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/MailService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/MailService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/app/error-modal/error-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/app/error-modal/error-modal.component.ts" afterDir="false" />
@@ -64,7 +67,7 @@
       <updated>1686078410152</updated>
       <workItem from="1686078412452" duration="24000" />
       <workItem from="1686734268140" duration="633000" />
-      <workItem from="1686757961600" duration="5004000" />
+      <workItem from="1686757961600" duration="5863000" />
     </task>
     <servers />
   </component>

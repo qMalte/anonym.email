@@ -102,13 +102,7 @@ export class AuthService {
 
         await resetLinkRepo.save(link);
 
-        const message = `Hallo ${user.email},\n\n
-mit dieser E-Mail senden wir dir deinen Sicherheitscode zu, mit welchem du dein Passwort auf unserer Webseite zurücksetzen kannst.\n
-Solltest du das zurücksetzen deines Passwortes nicht beantragt haben, ignoriere bitte diese Nachricht!\n
-\n
-Dein Sicherheitscode: ${link.code}`;
-
-        const mail = new MailService(user.email, 'Zurücksetzung des Passworts', message,
+        const mail = new MailService(user.email, 'Zurücksetzung des Passworts',
                 Template.PASSWORD_RESET_REQ, [link.code.toString()]);
 
         return await mail.send();
@@ -149,12 +143,7 @@ Dein Sicherheitscode: ${link.code}`;
         user.password = await bcrypt.hash(password, 10);
         await userRepo.save(user);
 
-        const message = `Hallo ${user.email},\n\n
-mit dieser E-Mail bestätigen wir die Änderung deines Passworts!\n
-Solltest du keine Änderung deines Passwortes durchgeführt haben, kontaktiere uns schnellstmöglich!\n
-Wir werden dann eine umgehende Sperrung deines Account einleiten.`;
-
-        const mail = new MailService(user.email, 'Passwort Änderung', message,
+        const mail = new MailService(user.email, 'Passwort Änderung',
             Template.PASSWORD_RESET_SUCCESS);
 
         return await mail.send();

@@ -19,18 +19,19 @@ export class MailService {
     });
 
     constructor(public target: string, public subject: string,
-                public message: string, public html: Template,
-                public params: string[] = []) {
+                public template: Template, public params: string[] = []) {
         //
     }
 
     async send(): Promise<boolean> {
 
-        let templateFile = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.html}`, 'utf8');
+        let templateFileHtml = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.template}.html`, 'utf8');
+        let templateFileRaw = fs.readFileSync(`${__dirname}/../../../storage/mails/${this.template}.raw`, 'utf8');
 
         let i = 1;
         this.params.forEach((param: string) => {
-            templateFile = templateFile.replace(`{param${i}}`, param);
+            templateFileHtml = templateFileHtml.replace(`{param${i}}`, param);
+            templateFileRaw = templateFileRaw.replace(`{param${i}}`, param);
             i++;
         });
 
@@ -38,13 +39,9 @@ export class MailService {
             from: `${this.fromName} <${this.fromAddress}>`,
             to: this.target,
             subject: this.subject,
-            text: this.message,
-            html: templateFile
+            text: templateFileRaw,
+            html: templateFileHtml
         };
-
-        if (message == null) {
-            return false;
-        }
 
         try {
             await this.transport.sendMail(message);
@@ -56,6 +53,6 @@ export class MailService {
 }
 
 export enum Template {
-    PASSWORD_RESET_REQ = 'password-reset-req.html',
-    PASSWORD_RESET_SUCCESS = 'password-reset-confirmation.html',
+    PASSWORD_RESET_REQ = 'password-reset-req',
+    PASSWORD_RESET_SUCCESS = 'password-reset-confirmation',
 }
