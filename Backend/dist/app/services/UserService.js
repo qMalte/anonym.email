@@ -15,22 +15,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 const User_1 = require("../models/User");
 const DatabaseProvider_1 = require("../../database/DatabaseProvider");
-const MailService_1 = require("./MailService");
 const Permission_1 = require("../models/Permission");
 const PermissionAssignment_1 = require("../models/PermissionAssignment");
 const validator_1 = __importDefault(require("validator"));
 const EntityRegistry_1 = require("../../database/EntityRegistry");
 class UserService {
-    static hasPermission(user_id, permission_identifier, write) {
+    static hasPermission(userId, permissionIdentifier, write) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (yield this.isAdmin(user_id)) {
+            if (yield this.isAdmin(userId)) {
                 return true;
             }
             const permissionRepo = DatabaseProvider_1.AppDataSource.getRepository(Permission_1.Permission);
             const permissionAssignmentsRepo = DatabaseProvider_1.AppDataSource.getRepository(PermissionAssignment_1.PermissionAssignment);
-            const user = yield this.getUserById(user_id);
+            const user = yield this.getUserById(userId);
             const permission = yield permissionRepo.findOneBy({
-                identifier: permission_identifier
+                identifier: permissionIdentifier
             });
             if (permission == null || user == null) {
                 return false;
@@ -79,11 +78,11 @@ class UserService {
             });
         });
     }
-    static isAdmin(user_id) {
+    static isAdmin(userId) {
         return __awaiter(this, void 0, void 0, function* () {
             const permissionRepo = DatabaseProvider_1.AppDataSource.getRepository(Permission_1.Permission);
             const permissionAssignmentsRepo = DatabaseProvider_1.AppDataSource.getRepository(PermissionAssignment_1.PermissionAssignment);
-            const user = yield this.getUserById(user_id);
+            const user = yield this.getUserById(userId);
             const permission = yield permissionRepo.findOneBy({
                 identifier: '*'
             });
@@ -106,22 +105,22 @@ class UserService {
             return false;
         });
     }
-    static checkAndChangeData(value, ormAtr, user_id) {
+    static checkAndChangeData(value, ormAtr, userId) {
         return __awaiter(this, void 0, void 0, function* () {
             const userRepo = DatabaseProvider_1.AppDataSource.getRepository(User_1.User);
             const user = yield userRepo.findOneBy({
-                id: user_id
+                id: userId
             });
             if (value != null) {
                 switch (ormAtr) {
                     case 'firstname':
-                        if (typeof (value) != 'string' || !validator_1.default.isAlpha(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isAlpha(value)) {
                             return false;
                         }
                         user.firstname = value;
                         break;
                     case 'lastname':
-                        if (typeof (value) != 'string' || !validator_1.default.isAlpha(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isAlpha(value)) {
                             return false;
                         }
                         user.lastname = value;
@@ -133,73 +132,73 @@ class UserService {
                         user.birthday = value;
                         break;
                     case 'phone':
-                        if ((typeof (value) != 'string') || !validator_1.default.isMobilePhone(value)) {
+                        if ((typeof (value) !== 'string') || !validator_1.default.isMobilePhone(value)) {
                             return false;
                         }
                         user.phone = value;
                         break;
                     case 'street':
-                        if (typeof (value) != 'string' || !validator_1.default.isAlpha(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isAlpha(value)) {
                             return false;
                         }
                         user.street = value;
                         break;
                     case 'houseNr':
-                        if (typeof (value) != 'string' || !validator_1.default.isAlpha(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isAlpha(value)) {
                             return false;
                         }
                         user.houseNr = value;
                         break;
                     case 'zip':
-                        if (typeof (value) != 'number' || !validator_1.default.isAlpha(value.toString())) {
+                        if (typeof (value) !== 'number' || !validator_1.default.isAlpha(value.toString())) {
                             return false;
                         }
                         user.zip = value;
                         break;
                     case 'city':
-                        if (typeof (value) != 'string' || !validator_1.default.isAlpha(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isAlpha(value)) {
                             return false;
                         }
                         user.city = value;
                         break;
                     case 'country':
-                        if (typeof (value) != 'string' || !validator_1.default.isAlpha(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isAlpha(value)) {
                             return false;
                         }
                         user.country = value;
                         break;
                     case 'nationality':
-                        if (typeof (value) != 'string' || !validator_1.default.isAlpha(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isAlpha(value)) {
                             return false;
                         }
                         user.nationality = value;
                         break;
                     case 'username':
-                        if (typeof (value) != 'string' || !validator_1.default.isAlpha(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isAlpha(value)) {
                             return false;
                         }
                         user.username = value;
                         break;
                     case 'email':
-                        if (typeof (value) != 'string' || !validator_1.default.isEmail(value)) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isEmail(value)) {
                             return false;
                         }
                         user.email = value;
                         break;
                     case 'isActive':
-                        if (typeof (value) != 'string' || !validator_1.default.isBoolean(value.toString())) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isBoolean(value.toString())) {
                             return false;
                         }
                         user.isActive = value.toString().toLowerCase() === 'true';
                         break;
                     case 'otpActive':
-                        if (typeof (value) != 'string' || !validator_1.default.isBoolean(value.toString())) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isBoolean(value.toString())) {
                             return false;
                         }
                         user.otpActive = value.toString().toLowerCase() === 'true';
                         break;
                     case 'verified':
-                        if (typeof (value) != 'string' || !validator_1.default.isBoolean(value.toString())) {
+                        if (typeof (value) !== 'string' || !validator_1.default.isBoolean(value.toString())) {
                             return false;
                         }
                         user.verified = value.toString().toLowerCase() === 'true';
@@ -221,8 +220,8 @@ Dein Bestätigungscode: ${user.verifyCode}\n
 \n\n
 Mit freundlichen Grüßen\n
 StepOne e.V.`;
-            const mail = new MailService_1.MailService(user.email, 'Deine Registrierung', message);
-            return yield mail.send();
+            // const mail = new MailService(user.email, 'Deine Registrierung', message);
+            return false; // await mail.send();
         });
     }
     static usernameAlreadyExists(username) {

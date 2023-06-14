@@ -9,7 +9,6 @@ import {MailService} from "../services/MailService";
 import {MailChangeRequest} from "../models/MailChangeRequest";
 import {DateHelper} from "../../helpers/DateHelper";
 import {NumericHelper} from "../../helpers/NumericHelper";
-import {RSAService} from "../services/RSAService";
 import {Permission} from "../models/Permission";
 import {SystemResources} from "../../resources/SystemResources";
 import {AuthenticationResources} from "../../resources/AuthenticationResources";
@@ -78,7 +77,7 @@ export class UserController {
 
     async PutChangePassword(req: express.Request, res: express.Response) {
 
-        if (req.body.password == null || req.body.password == "") {
+        if (req.body.password == null || req.body.password === "") {
             return res.status(400).send({
                 reason: 'password_required'
             });
@@ -105,7 +104,7 @@ Wir werden dann eine umgehende Sperrung deines Account einleiten.\n
 Mit freundlichen Grüßen\n
 StepOne e.V.`;
 
-        await new MailService(user.email, 'Passwort Änderung', message).send();
+        // await new MailService(user.email, 'Passwort Änderung', message).send();
 
         res.status(200).end();
 
@@ -113,7 +112,7 @@ StepOne e.V.`;
 
     async PutChangeMail(req: express.Request, res: express.Response) {
 
-        if (req.body.email == null || req.body.email == "") {
+        if (req.body.email == null || req.body.email === "") {
             return res.status(400).send({
                 reason: 'email_required'
             });
@@ -162,8 +161,8 @@ Dein Sicherheitscode lautet: ${request.newMailToken}\n
 Mit freundlichen Grüßen\n
 StepOne e.V.`;
 
-        await new MailService(request.email, 'E-Mail Validierung', messageToNewAddress).send();
-        await new MailService(user.email, 'Sicherheitsüberprüfung', messageToOldAddress).send();
+        // await new MailService(request.email, 'E-Mail Validierung', messageToNewAddress).send();
+        // await new MailService(user.email, 'Sicherheitsüberprüfung', messageToOldAddress).send();
 
         res.status(200).end();
 

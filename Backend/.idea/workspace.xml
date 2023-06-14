@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c6687aa-7f2c-4d03-9bcd-d0775d12ed3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/storage/mails/alias-created.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/mails/alias-created.mjml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/mails/alias-created.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/MailAliasController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MailAliasController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/MailService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/MailService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/UserService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/services/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/services/UserService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/services/UserService.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/app/error-modal/error-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/app/error-modal/error-modal.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/environments/environment.prod.ts" afterDir="false" />
@@ -68,7 +67,7 @@
       <updated>1686078410152</updated>
       <workItem from="1686078412452" duration="24000" />
       <workItem from="1686734268140" duration="633000" />
-      <workItem from="1686757961600" duration="8095000" />
+      <workItem from="1686757961600" duration="8353000" />
     </task>
     <servers />
   </component>

@@ -19,7 +19,6 @@ const DatabaseProvider_1 = require("../../database/DatabaseProvider");
 const UserService_1 = require("../services/UserService");
 const validator_1 = __importDefault(require("validator"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const MailService_1 = require("../services/MailService");
 const MailChangeRequest_1 = require("../models/MailChangeRequest");
 const DateHelper_1 = require("../../helpers/DateHelper");
 const NumericHelper_1 = require("../../helpers/NumericHelper");
@@ -81,7 +80,7 @@ class UserController {
     }
     PutChangePassword(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (req.body.password == null || req.body.password == "") {
+            if (req.body.password == null || req.body.password === "") {
                 return res.status(400).send({
                     reason: 'password_required'
                 });
@@ -102,13 +101,13 @@ Wir werden dann eine umgehende Sperrung deines Account einleiten.\n
 \n\n
 Mit freundlichen Grüßen\n
 StepOne e.V.`;
-            yield new MailService_1.MailService(user.email, 'Passwort Änderung', message).send();
+            // await new MailService(user.email, 'Passwort Änderung', message).send();
             res.status(200).end();
         });
     }
     PutChangeMail(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (req.body.email == null || req.body.email == "") {
+            if (req.body.email == null || req.body.email === "") {
                 return res.status(400).send({
                     reason: 'email_required'
                 });
@@ -149,8 +148,8 @@ Dein Sicherheitscode lautet: ${request.newMailToken}\n
 \n\n
 Mit freundlichen Grüßen\n
 StepOne e.V.`;
-            yield new MailService_1.MailService(request.email, 'E-Mail Validierung', messageToNewAddress).send();
-            yield new MailService_1.MailService(user.email, 'Sicherheitsüberprüfung', messageToOldAddress).send();
+            // await new MailService(request.email, 'E-Mail Validierung', messageToNewAddress).send();
+            // await new MailService(user.email, 'Sicherheitsüberprüfung', messageToOldAddress).send();
             res.status(200).end();
         });
     }

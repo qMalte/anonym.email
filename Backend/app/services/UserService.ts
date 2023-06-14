@@ -9,19 +9,19 @@ import {EntityRegistry} from "../../database/EntityRegistry";
 
 export class UserService {
 
-    static async hasPermission(user_id: number, permission_identifier: string, write: boolean): Promise<boolean> {
+    static async hasPermission(userId: number, permissionIdentifier: string, write: boolean): Promise<boolean> {
 
-        if (await this.isAdmin(user_id)) {
+        if (await this.isAdmin(userId)) {
             return true;
         }
 
         const permissionRepo = AppDataSource.getRepository(Permission);
         const permissionAssignmentsRepo = AppDataSource.getRepository(PermissionAssignment);
 
-        const user = await this.getUserById(user_id);
+        const user = await this.getUserById(userId);
 
         const permission = await permissionRepo.findOneBy({
-            identifier: permission_identifier
+            identifier: permissionIdentifier
         });
 
         if (permission == null || user == null) {
@@ -72,11 +72,11 @@ export class UserService {
         });
     }
 
-    static async isAdmin(user_id: number): Promise<boolean> {
+    static async isAdmin(userId: number): Promise<boolean> {
         const permissionRepo = AppDataSource.getRepository(Permission);
         const permissionAssignmentsRepo = AppDataSource.getRepository(PermissionAssignment);
 
-        const user = await this.getUserById(user_id);
+        const user = await this.getUserById(userId);
 
         const permission = await permissionRepo.findOneBy({
             identifier: '*'
@@ -105,11 +105,11 @@ export class UserService {
         return false;
     }
 
-    static async checkAndChangeData(value: any, ormAtr: string, user_id: number): Promise<boolean> {
+    static async checkAndChangeData(value: any, ormAtr: string, userId: number): Promise<boolean> {
 
         const userRepo = AppDataSource.getRepository(User);
         const user = await userRepo.findOneBy({
-            id: user_id
+            id: userId
         });
 
         if (value != null) {
@@ -117,13 +117,13 @@ export class UserService {
             switch (ormAtr) {
 
                 case 'firstname':
-                    if (typeof (value) != 'string' || !validator.isAlpha(value)) {
+                    if (typeof (value) !== 'string' || !validator.isAlpha(value)) {
                         return false;
                     }
                     user.firstname = value;
                     break;
                 case 'lastname':
-                    if (typeof (value) != 'string' || !validator.isAlpha(value)) {
+                    if (typeof (value) !== 'string' || !validator.isAlpha(value)) {
                         return false;
                     }
                     user.lastname = value;
@@ -135,73 +135,73 @@ export class UserService {
                     user.birthday = value;
                     break;
                 case 'phone':
-                    if ((typeof (value) != 'string') || !validator.isMobilePhone(value)) {
+                    if ((typeof (value) !== 'string') || !validator.isMobilePhone(value)) {
                         return false;
                     }
                     user.phone = value;
                     break;
                 case 'street':
-                    if (typeof (value) != 'string' || !validator.isAlpha(value)) {
+                    if (typeof (value) !== 'string' || !validator.isAlpha(value)) {
                         return false;
                     }
                     user.street = value;
                     break;
                 case 'houseNr':
-                    if (typeof (value) != 'string' || !validator.isAlpha(value)) {
+                    if (typeof (value) !== 'string' || !validator.isAlpha(value)) {
                         return false;
                     }
                     user.houseNr = value;
                     break;
                 case 'zip':
-                    if (typeof (value) != 'number' || !validator.isAlpha(value.toString())) {
+                    if (typeof (value) !== 'number' || !validator.isAlpha(value.toString())) {
                         return false;
                     }
                     user.zip = value;
                     break;
                 case 'city':
-                    if (typeof (value) != 'string' || !validator.isAlpha(value)) {
+                    if (typeof (value) !== 'string' || !validator.isAlpha(value)) {
                         return false;
                     }
                     user.city = value;
                     break;
                 case 'country':
-                    if (typeof (value) != 'string' || !validator.isAlpha(value)) {
+                    if (typeof (value) !== 'string' || !validator.isAlpha(value)) {
                         return false;
                     }
                     user.country = value;
                     break;
                 case 'nationality':
-                    if (typeof (value) != 'string' || !validator.isAlpha(value)) {
+                    if (typeof (value) !== 'string' || !validator.isAlpha(value)) {
                         return false;
                     }
                     user.nationality = value;
                     break;
                 case 'username':
-                    if (typeof (value) != 'string' || !validator.isAlpha(value)) {
+                    if (typeof (value) !== 'string' || !validator.isAlpha(value)) {
                         return false;
                     }
                     user.username = value;
                     break;
                 case 'email':
-                    if (typeof (value) != 'string' || !validator.isEmail(value)) {
+                    if (typeof (value) !== 'string' || !validator.isEmail(value)) {
                         return false;
                     }
                     user.email = value;
                     break;
                 case 'isActive':
-                    if (typeof (value) != 'string' || !validator.isBoolean(value.toString())) {
+                    if (typeof (value) !== 'string' || !validator.isBoolean(value.toString())) {
                         return false;
                     }
                     user.isActive = value.toString().toLowerCase() === 'true';
                     break;
                 case 'otpActive':
-                    if (typeof (value) != 'string' || !validator.isBoolean(value.toString())) {
+                    if (typeof (value) !== 'string' || !validator.isBoolean(value.toString())) {
                         return false;
                     }
                     user.otpActive = value.toString().toLowerCase() === 'true';
                     break;
                 case 'verified':
-                    if (typeof (value) != 'string' || !validator.isBoolean(value.toString())) {
+                    if (typeof (value) !== 'string' || !validator.isBoolean(value.toString())) {
                         return false;
                     }
                     user.verified = value.toString().toLowerCase() === 'true';
@@ -226,9 +226,9 @@ Dein Bestätigungscode: ${user.verifyCode}\n
 Mit freundlichen Grüßen\n
 StepOne e.V.`;
 
-        const mail = new MailService(user.email, 'Deine Registrierung', message);
+        // const mail = new MailService(user.email, 'Deine Registrierung', message);
 
-        return await mail.send();
+        return false; // await mail.send();
     }
 
     static async usernameAlreadyExists(username: string): Promise<boolean> {
