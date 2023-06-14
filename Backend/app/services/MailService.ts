@@ -30,6 +30,7 @@ export class MailService {
 
         let i = 1;
         this.params.forEach((param: string) => {
+            console.log(`{param${i}}`);
             console.log(param);
             templateFile.replace(`{param${i}}`, param);
             i++;
