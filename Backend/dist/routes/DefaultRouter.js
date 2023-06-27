@@ -45,5 +45,6 @@ router.delete("/alias/:id/admin", AuthMiddleware_1.default, ControllerRegistry_1
 router.delete("/alias/:id", AuthMiddleware_1.default, ControllerRegistry_1.ControllerRegistry.MailAlias.DeleteOwnAlias);
 router.get("/aliases", AuthMiddleware_1.default, ControllerRegistry_1.ControllerRegistry.MailAlias.GetOwnAliases);
 router.get("/aliases/admin", AuthMiddleware_1.default, ControllerRegistry_1.ControllerRegistry.MailAlias.GetAliases);
+router.put("/alias", AuthMiddleware_1.default, ControllerRegistry_1.ControllerRegistry.MailAlias.PutCustomNameOfAlias);
 exports.default = router;
 //# sourceMappingURL=DefaultRouter.js.map

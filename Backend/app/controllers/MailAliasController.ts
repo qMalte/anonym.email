@@ -185,4 +185,46 @@ export class MailAliasController {
         }
     }
 
+    async PutCustomNameOfAlias(req: express.Request, res: express.Response) {
+        try {
+
+            if (req.body.alias_id == null) {
+                return res.status(400).send(ValidationResources.MissingMailAliasId);
+            }
+
+            if (req.body.customName == null) {
+                return res.status(400).send(ValidationResources.MissingMailAliasCustomName);
+            }
+
+            if (!validator.isInt(req.body.alias_id.toString())) {
+                return res.status(400).send(ValidationResources.MissingMailAliasCustomName);
+            }
+
+            if (!validator.isAlphanumeric(req.body.customName.toString())) {
+                return res.status(400).send(ValidationResources.MailAliasCustomNameValidationFailed);
+            }
+
+            const user = await EntityRegistry.getInstance().User.findOne({
+                where: {id: res.locals.user_id},
+                relations: {
+                    aliases: true
+                }
+            });
+
+            const alias = user.aliases.find(x => x.id === +req.body.alias_id);
+
+            if (alias == null) {
+                return res.status(404).send(ValidationResources.AliasNotFound);
+            }
+
+            alias.customName = req.body.customName;
+            await alias.save();
+
+            return res.status(200).end();
+
+        } catch (e) {
+            return res.status(500).send(SystemResources.ServerError);
+        }
+    }
+
 }

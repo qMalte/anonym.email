@@ -15,6 +15,8 @@ export class MailAlias extends BaseEntity {
 
     @Column() public mailbox?: string;
 
+    @Column({default: null}) public customName?: string;
+
     @CreateDateColumn({type: 'timestamp'})
     createdAt: Date
 

@@ -197,6 +197,40 @@ class MailAliasController {
             }
         });
     }
+    PutCustomNameOfAlias(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                if (req.body.alias_id == null) {
+                    return res.status(400).send(ValidationResources_1.ValidationResources.MissingMailAliasId);
+                }
+                if (req.body.customName == null) {
+                    return res.status(400).send(ValidationResources_1.ValidationResources.MissingMailAliasCustomName);
+                }
+                if (!validator_1.default.isInt(req.body.alias_id.toString())) {
+                    return res.status(400).send(ValidationResources_1.ValidationResources.MissingMailAliasCustomName);
+                }
+                if (!validator_1.default.isAlphanumeric(req.body.customName.toString())) {
+                    return res.status(400).send(ValidationResources_1.ValidationResources.MailAliasCustomNameValidationFailed);
+                }
+                const user = yield EntityRegistry_1.EntityRegistry.getInstance().User.findOne({
+                    where: { id: res.locals.user_id },
+                    relations: {
+                        aliases: true
+                    }
+                });
+                const alias = user.aliases.find(x => x.id === +req.body.alias_id);
+                if (alias == null) {
+                    return res.status(404).send(ValidationResources_1.ValidationResources.AliasNotFound);
+                }
+                alias.customName = req.body.customName;
+                yield alias.save();
+                return res.status(200).end();
+            }
+            catch (e) {
+                return res.status(500).send(SystemResources_1.SystemResources.ServerError);
+            }
+        });
+    }
 }
 exports.MailAliasController = MailAliasController;
 //# sourceMappingURL=MailAliasController.js.map

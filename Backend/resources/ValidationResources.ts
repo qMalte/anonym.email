@@ -121,5 +121,13 @@ export const ValidationResources = {
     MailAliasIdValidationFailed: new Response('mail_alias_id_empty',
         'Die Alias ID konnte nicht validiert werden.',
         'The alias ID could not be validated.',
-        ['id'])
+        ['id']),
+    MissingMailAliasCustomName: new Response('mail_alias_customName_empty',
+        'Der benutzerdefinierte Name sollte nicht leer sein.',
+        'The custom name should not be empty.',
+        ['customName']),
+    MailAliasCustomNameValidationFailed: new Response('mail_alias_customName_empty',
+        'Der benutzerdefinierte Name konnte nicht validiert werden.',
+        'The custom name could not be validated.',
+        ['customName']),
 }

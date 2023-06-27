@@ -23,6 +23,8 @@ exports.ValidationResources = {
     AliasNotFound: new Response_1.Response('validation_error_alias_not_found', 'Der Alias wurde nicht gefunden oder wurde bereits gelöscht.', 'The alias was not found or has already been deleted.', []),
     MailAddressLimitReached: new Response_1.Response('mail_address_limit_reached', 'Die maximale Anzahl an Alias-Adressen für dieses Ziel wurde erreicht.', 'The maximum number of alias addresses for this destination has been reached.', []),
     MissingMailAliasId: new Response_1.Response('mail_alias_id_empty', 'Die MailAlias ID ist leer.', 'The MailAlias ID is empty.', ['id']),
-    MailAliasIdValidationFailed: new Response_1.Response('mail_alias_id_empty', 'Die Alias ID konnte nicht validiert werden.', 'The alias ID could not be validated.', ['id'])
+    MailAliasIdValidationFailed: new Response_1.Response('mail_alias_id_empty', 'Die Alias ID konnte nicht validiert werden.', 'The alias ID could not be validated.', ['id']),
+    MissingMailAliasCustomName: new Response_1.Response('mail_alias_customName_empty', 'Der benutzerdefinierte Name sollte nicht leer sein.', 'The custom name should not be empty.', ['customName']),
+    MailAliasCustomNameValidationFailed: new Response_1.Response('mail_alias_customName_empty', 'Der benutzerdefinierte Name konnte nicht validiert werden.', 'The custom name could not be validated.', ['customName']),
 };
 //# sourceMappingURL=ValidationResources.js.map

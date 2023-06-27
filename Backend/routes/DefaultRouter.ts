@@ -48,5 +48,6 @@ router.delete("/alias/:id/admin", AuthMiddleware, ControllerRegistry.MailAlias.D
 router.delete("/alias/:id", AuthMiddleware, ControllerRegistry.MailAlias.DeleteOwnAlias);
 router.get("/aliases", AuthMiddleware, ControllerRegistry.MailAlias.GetOwnAliases);
 router.get("/aliases/admin", AuthMiddleware, ControllerRegistry.MailAlias.GetAliases);
+router.put("/alias", AuthMiddleware, ControllerRegistry.MailAlias.PutCustomNameOfAlias);
 
 export default router;

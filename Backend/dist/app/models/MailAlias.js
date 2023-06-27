@@ -23,6 +23,10 @@ __decorate([
     __metadata("design:type", String)
 ], MailAlias.prototype, "mailbox", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ default: null }),
+    __metadata("design:type", String)
+], MailAlias.prototype, "customName", void 0);
+__decorate([
     (0, typeorm_1.CreateDateColumn)({ type: 'timestamp' }),
     __metadata("design:type", Date)
 ], MailAlias.prototype, "createdAt", void 0);
