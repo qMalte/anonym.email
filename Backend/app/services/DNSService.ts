@@ -1,22 +1,19 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.DNSService = void 0;
-const dns_1 = __importDefault(require("dns"));
-class DNSService {
-    static checkTxtRecord(name, value) {
-        return new Promise(resolve => {
-            dns_1.default.setServers(['1.1.1.1', '1.0.0.1']);
-            dns_1.default.resolveTxt(name, (err, records) => {
+import dns from 'dns';
+
+export class DNSService {
+
+    static checkTxtRecord(name: string, value: string) {
+        return new Promise<boolean>(resolve => {
+
+            dns.setServers(['1.1.1.1', '1.0.0.1']);
+
+            dns.resolveTxt(name, (err, records) => {
                 if (err) {
                     resolve(false);
                     return;
-                }
-                else {
+                } else {
                     if (records != null && records.length != null && records.length === 1
-                        && records[0] != null && records[0].length != null && records[0].length === 1) {
+                    && records[0] != null && records[0].length != null && records[0].length === 1) {
                         if (records[0][0] === value) {
                             resolve(true);
                             return;
@@ -27,21 +24,26 @@ class DNSService {
             });
         });
     }
-    static checkMxRecord(name, expectedExchange) {
-        return new Promise(resolve => {
-            dns_1.default.setServers(['1.1.1.1', '1.0.0.1']);
-            dns_1.default.resolveMx(name, (err, records) => {
+
+    static checkMxRecord(name: string, expectedExchange: string) {
+        return new Promise<boolean>(resolve => {
+
+            dns.setServers(['1.1.1.1', '1.0.0.1']);
+
+            dns.resolveMx(name, (err, records) => {
                 if (err) {
                     resolve(false);
                     return;
-                }
-                else {
+                } else {
+
                     let prioOfExcepted = -1;
+
                     for (const record of records) {
                         if (record.exchange === expectedExchange) {
                             prioOfExcepted = record.priority;
                         }
                     }
+
                     for (const record of records) {
                         if (record.exchange !== expectedExchange) {
                             if (record.priority > prioOfExcepted) {
@@ -50,34 +52,37 @@ class DNSService {
                             }
                         }
                     }
+
                     if (prioOfExcepted === -1) {
                         resolve(false);
                         return;
                     }
+
                     resolve(true);
+
                 }
             });
         });
     }
-    static hasMxRecord(name) {
-        return new Promise(resolve => {
-            dns_1.default.setServers(['1.1.1.1', '1.0.0.1']);
-            dns_1.default.resolveMx(name, (err, records) => {
+
+    static hasMxRecord(name: string) {
+        return new Promise<boolean>(resolve => {
+
+            dns.setServers(['1.1.1.1', '1.0.0.1']);
+
+            dns.resolveMx(name, (err, records) => {
                 if (err) {
                     resolve(false);
                     return;
-                }
-                else {
+                } else {
                     if (records == null || records.length === 0) {
                         resolve(false);
-                    }
-                    else {
+                    } else {
                         resolve(true);
                     }
                 }
             });
         });
     }
+
 }
-exports.DNSService = DNSService;
-//# sourceMappingURL=DNSService.js.map

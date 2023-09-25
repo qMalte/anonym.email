@@ -48,6 +48,7 @@ const UserService_1 = require("../services/UserService");
 const AuthenticationResources_1 = require("../../resources/AuthenticationResources");
 const process = __importStar(require("process"));
 const MailService_1 = require("../services/MailService");
+const DNSService_1 = require("../services/DNSService");
 class MailAliasController {
     GetAliases(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -93,6 +94,15 @@ class MailAliasController {
                 }
                 if (!validator_1.default.isEmail(req.body.email.toString())) {
                     return res.status(400).send(ValidationResources_1.ValidationResources.MailAddressCouldNotValidated);
+                }
+                const requestedMail = req.body.email.toString();
+                const requestedMailArr = requestedMail.split('@');
+                if (requestedMailArr.length !== 2) {
+                    return res.status(400).send(ValidationResources_1.ValidationResources.InvalidFormatOfMailAddress);
+                }
+                const requestedMailDomain = requestedMailArr[1];
+                if ((yield DNSService_1.DNSService.hasMxRecord(requestedMailDomain)) === false) {
+                    return res.status(400).send(ValidationResources_1.ValidationResources.InvalidMail);
                 }
                 let user = yield EntityRegistry_1.EntityRegistry.getInstance().User.findOne({
                     where: { email: req.body.email.toLowerCase() },

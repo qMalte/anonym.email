@@ -14,9 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const http_1 = __importDefault(require("http"));
-const fs_1 = __importDefault(require("fs"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const https_1 = __importDefault(require("https"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const AuthRouter_1 = __importDefault(require("./routes/AuthRouter"));
 const DefaultRouter_1 = __importDefault(require("./routes/DefaultRouter"));
@@ -31,15 +29,15 @@ const LoggingHelper_1 = require("./helpers/LoggingHelper");
 dotenv_1.default.config();
 class App {
     constructor() {
-        this.certificates = {
-            key: fs_1.default.readFileSync('./storage/keys/localhost.key'),
-            cert: fs_1.default.readFileSync('./storage/keys/localhost.crt')
-        };
+        /* private certificates = {
+            key: fs.readFileSync('./storage/keys/localhost.key'),
+            cert: fs.readFileSync('./storage/keys/localhost.crt')
+        }; */
         this.app = (0, express_1.default)();
         this.httpServer = http_1.default.createServer(this.app);
-        this.httpsServer = https_1.default.createServer(this.certificates, this.app);
+        // private httpsServer = https.createServer(this.certificates, this.app);
         this.httpPort = process.env.HTTP_PORT || 8080;
-        this.httpsPort = process.env.HTTPS_PORT || 8443;
+        // private httpsPort = process.env.HTTPS_PORT || 8443;
         this.upload = (0, multer_1.default)({ dest: 'uploads/' });
         this._log = new LoggingHelper_1.LoggingHelper(__filename);
     }
@@ -70,9 +68,9 @@ class App {
         this.httpServer.listen(this.httpPort, () => {
             this._log.info(`Der HTTP-Server wurde unter Port: ${this.httpPort} gestartet!`);
         });
-        this.httpsServer.listen(this.httpsPort, () => {
+        /* this.httpsServer.listen(this.httpsPort, () => {
             this._log.info(`Der HTTPS-Server wurde unter Port: ${this.httpsPort} gestartet!`);
-        });
+        }); */
         return this;
     }
 }

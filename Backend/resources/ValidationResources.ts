@@ -98,9 +98,21 @@ export const ValidationResources = {
         ['email']
     ),
     MailAddressCouldNotValidated: new Response(
-        'validation_error_email',
-        'Die E-Mail Adresse konnte nicht als gültige E-Mail Adresse validiert werden.',
-        'The email address could not be validated as a valid email address.',
+        'validation_error_email_syntax',
+        'Die Eingabe konnte nicht als gültige E-Mail Adresse erkannt werden.',
+        'The input could not be recognized as a valid email address.',
+        []
+    ),
+    InvalidFormatOfMailAddress: new Response(
+        'validation_error_email_format',
+        'Das Format der E-Mail Adresse ist ungültig.',
+        'The format of the email address is invalid.',
+        []
+    ),
+    InvalidMail: new Response(
+        'validation_error_invalid_email',
+        'Die E-Mail Adresse ist ungültig, bitte überprüfe die Eingabe.',
+        'The email address is invalid, please check the input.',
         []
     ),
     AliasNotFound: new Response(

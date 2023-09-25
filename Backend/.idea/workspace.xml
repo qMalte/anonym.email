@@ -5,15 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c6687aa-7f2c-4d03-9bcd-d0775d12ed3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/services/DNSService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.ts" beforeDir="false" afterPath="$PROJECT_DIR$/App.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/MailAliasController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MailAliasController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/MailAlias.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/MailAlias.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/Validation/DomainValidation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/Validation/DomainValidation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/App.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/App.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/BlacklistedIP.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/BlacklistedIP.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/FailedLogin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/FailedLogin.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/Group.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/Group.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/Log.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/Log.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/MailAlias.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/MailAlias.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/MailChangeRequest.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/MailChangeRequest.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/PasswordResetLink.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/PasswordResetLink.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/Permission.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/Permission.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/PermissionAssignment.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/PermissionAssignment.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/Session.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/Session.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/models/User.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/User.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/services/DNSService.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/services/DNSService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app/services/DNSService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/services/DNSService.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/ValidationResources.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ValidationResources.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/DefaultRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/routes/DefaultRouter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/app/error-modal/error-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/app/error-modal/error-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +38,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2QqQ0c2kW2Plot80XTM4LSBm4Q5" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -41,19 +56,21 @@
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/malte/Entwicklung/Anonym.email/Backend",
+    "last_opened_file_path": "E:/Development/anonym.email/Backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/malte/Entwicklung/Anonym.email/Backend/node_modules/typescript/lib",
+    "ts.external.directory.path": "E:\\Development\\anonym.email\\Backend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Development\anonym.email\Backend" />
+      <recent name="E:\Development\anonym.email\Backend\app\services" />
       <recent name="$PROJECT_DIR$/storage/mails" />
     </key>
   </component>
@@ -69,6 +86,7 @@
       <workItem from="1686734268140" duration="633000" />
       <workItem from="1686757961600" duration="8470000" />
       <workItem from="1687903834711" duration="541000" />
+      <workItem from="1695664768198" duration="1530000" />
     </task>
     <servers />
   </component>

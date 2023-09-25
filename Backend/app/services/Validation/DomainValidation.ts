@@ -11,7 +11,7 @@ export class DomainValidation extends ValidationBase implements IValidation {
     validate(domain: MailAlias): ValidationError[] {
         this.resetErrors();
 
-        if (domain.name != null && (!validator.isFQDN(domain.name.toString()) || !domain.name.includes('.'))) {
+        /* if (domain.name != null && (!validator.isFQDN(domain.name.toString()) || !domain.name.includes('.'))) {
             this.addError('The custom domain name must be a valid domain.');
         }
 
@@ -29,7 +29,7 @@ export class DomainValidation extends ValidationBase implements IValidation {
 
         if (domain.duration == null || !validator.isNumeric(domain.duration.toString()) || domain.duration > 86400) {
             this.addError('The expiration date must be specified as an integer in seconds.');
-        }
+        } */
 
 
         return this.errors;

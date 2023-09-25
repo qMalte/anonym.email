@@ -12,6 +12,7 @@ import {AuthenticationResources} from "../../resources/AuthenticationResources";
 import * as process from "process";
 import {MailService, Template} from "../services/MailService";
 import normalizeEmail = validator.normalizeEmail;
+import {DNSService} from "../services/DNSService";
 
 export class MailAliasController {
 
@@ -59,6 +60,19 @@ export class MailAliasController {
 
             if (!validator.isEmail(req.body.email.toString())) {
                 return res.status(400).send(ValidationResources.MailAddressCouldNotValidated);
+            }
+
+            const requestedMail = req.body.email.toString();
+            const requestedMailArr = requestedMail.split('@');
+
+            if (requestedMailArr.length !== 2) {
+                return res.status(400).send(ValidationResources.InvalidFormatOfMailAddress);
+            }
+
+            const requestedMailDomain = requestedMailArr[1];
+
+            if (await DNSService.hasMxRecord(requestedMailDomain) === false) {
+                return res.status(400).send(ValidationResources.InvalidMail);
             }
 
             let user = await EntityRegistry.getInstance().User.findOne({
