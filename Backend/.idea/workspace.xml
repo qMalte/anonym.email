@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c6687aa-7f2c-4d03-9bcd-d0775d12ed3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/services/DNSService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.ts" beforeDir="false" afterPath="$PROJECT_DIR$/App.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/MailAliasController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MailAliasController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/Validation/DomainValidation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/Validation/DomainValidation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/App.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/App.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/BlacklistedIP.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/BlacklistedIP.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/FailedLogin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/FailedLogin.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/Group.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/Group.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/Log.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/Log.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/MailAlias.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/MailAlias.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/MailChangeRequest.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/MailChangeRequest.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/PasswordResetLink.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/PasswordResetLink.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/Permission.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/Permission.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/PermissionAssignment.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/PermissionAssignment.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/Session.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/Session.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/models/User.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/models/User.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/services/DNSService.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/services/DNSService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app/services/DNSService.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app/services/DNSService.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ValidationResources.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ValidationResources.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +36,7 @@
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/Development/anonym.email/Backend",
+    "last_opened_file_path": "E:/Development/anonym.email/Client",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,7 +66,7 @@
       <workItem from="1686734268140" duration="633000" />
       <workItem from="1686757961600" duration="8470000" />
       <workItem from="1687903834711" duration="541000" />
-      <workItem from="1695664768198" duration="1530000" />
+      <workItem from="1695664768198" duration="2154000" />
     </task>
     <servers />
   </component>
